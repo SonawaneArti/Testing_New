@@ -1,0 +1,22 @@
+create table student (student_id number, first_name varchar(225), last_name varchar(223), advisor_id number);
+create table advisor (advisor_id number, first_name varchar(220), last_name varchar(250));
+
+insert into student values(1,'Sushant','Patil',20);
+insert into student values(2,'Ram','Singh',30);
+insert into student values(3,'Nita','Roy',30);
+insert into student values(4,'Ankur','Patil',20);
+insert into student values(5,'Maya','Parekh',40);
+insert into student values(6, 'Rahul','Sathe','');
+
+
+select * from student
+
+insert into advisor values(10,'Suresh','Deshmukh');
+insert into advisor values(20,'Vikas','Patil');
+insert into advisor values(30,'Sakshi','Sharma');
+insert into advisor values(40,'Sumit','Pawar');
+insert into advisor values(50,'Ramesh','Raut');
+
+select * from advisor
+
+select * from student s inner join advisor a on s.advisor_id= a.advisor_id

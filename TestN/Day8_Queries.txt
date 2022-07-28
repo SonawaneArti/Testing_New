@@ -1,0 +1,45 @@
+CREATE TABLE EMPLOYEE(    
+EMPLOYEE_ID int NOT NULL, FIRST_NAME varchar(255), LAST_NAME varchar(255), DEPT_ID int,Salary int ,Designation varchar2(30), PRIMARY KEY (EMPLOYEE_ID));
+
+
+insert into EMPLOYEE values(10,'Sumit','Pendkar',40,25000,'QA');
+insert into EMPLOYEE values(20,'Sandesh','Pawar',40,28000,'QA');
+insert into EMPLOYEE values(30,'Prashant','Rathor',50,35000,'Senior QA');
+insert into EMPLOYEE values(40,'Vijay','Dhanekar',60,32000,'Senior QA');
+insert into EMPLOYEE values(50,'Binay','Roy',50,18000,'Associate QA');
+insert into EMPLOYEE values(60,'Manish','Sahoo',40,23000,'QA');
+insert into EMPLOYEE values(70,'Tarun','Verma',20,42000,'Manager');
+insert into EMPLOYEE values(80,'Sharad','Sharma',30,29000,'QA');
+insert into EMPLOYEE values(90,'Raju','Giri',20,21000,'QA');
+insert into EMPLOYEE values(100,'Rajesh','Sharma','',29000,'QA');
+insert into EMPLOYEE values(110,'Ravi','Giri','',21000,'QA');
+
+--------------------------------------------------------------
+
+CREATE TABLE DEPARTMENT(    
+DEPT_ID int NOT NULL, DEPT_NAME varchar(255), DEPT_LOC varchar(255), PRIMARY KEY (DEPT_ID));
+
+insert into DEPARTMENT values(20,'IT','PUNE');
+insert into DEPARTMENT values(30,'HR','PUNE');
+insert into DEPARTMENT values(40,'Finance','Mumbai');
+insert into DEPARTMENT values(50,'Admin','PUNE');
+insert into DEPARTMENT values(60,'Salesforce','Hyderabad');
+insert into DEPARTMENT values(70,'Hiring','Bangalore');
+insert into DEPARTMENT values(80,'Security','Bangalore');
+insert into DEPARTMENT values(90,'Helpdesk','Mumbai');
+insert into DEPARTMENT values(20,'Security','Mumbai');
+
+-----------------------------------------------------------------------
+
+CREATE TABLE EMPLOYEE(    
+EMPLOYEE_ID int NOT NULL, FIRST_NAME varchar(255), LAST_NAME varchar(255), DEPT_ID int,Salary int ,Designation varchar2(30), PRIMARY KEY (EMPLOYEE_ID));
+
+select * from employee
+
+CREATE TABLE DEPARTMENT(    
+DEPT_ID int NOT NULL, DEPT_NAME varchar(255), DEPT_LOC varchar(255), PRIMARY KEY (DEPT_ID));
+
+
+select employee.EMPLOYEE_ID,employee.FIRST_NAME,employee.DEPT_ID,department.DEPT_NAME,department.DEPT_LOC from EMPLOYEE full outer join DEPARTMENT ON employee.DEPT_ID = DEPARTMENT.dept_id
+
+select e1.EMPLOYEE_ID,e1.FIRST_NAME,e1.DEPT_ID,d1.DEPT_NAME,d1.DEPT_LOC from EMPLOYEE e1 left outer join DEPARTMENT d1 ON e1.DEPT_ID = d1.dept_id
